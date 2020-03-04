@@ -1,0 +1,13 @@
+<h2>Create a New Product</h>
+
+<%= render partial: '/errors', locals: { record: @product } %>
+
+<%= form_for @product do |f| %>
+   <%= f.label :brand %>
+   <%= f.text_field :brand %>
+   <%= f.label :title %>
+   <%= f.text_field :title %>
+   <%= f.label :category %>
+   <%= f.text_field :category %>
+   <%= f.submit "Create Product and Add Review" %>
+<% end %>

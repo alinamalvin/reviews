@@ -1,8 +1,12 @@
 <h2> Products </h2> 
 
+<%= link_to "Create New Product", products_path %>
+
 <% @products.each do |product| %>
    <p> <%= product.brand %></p>
    <p> <%= product.title %></p>
    <p> <%= product.category %></p>
-   <img src=<%=product.img%>>
+   <img src=<%=product.img %>>
+   <h3><%= link_to product.title, product_reviews_path(product) %></h3>
+   <p><%= product.reviews.count %> reviews</p>
 <% end %>
