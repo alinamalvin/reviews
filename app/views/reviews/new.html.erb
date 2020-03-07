@@ -1,0 +1,10 @@
+<h2> Add new review on the product <i><%= @product.title %></i> </h2>
+
+<%= render partial: '/errors', locals: { record: @review } %>
+
+<%= form_for @review do |f| %>
+   <%=  f.label :Description %>
+   <%=  f.text_area :description %>
+   <%= f.hidden_field :product_id, value: @product.id %>
+   <%= f.submit %>
+<% end %>

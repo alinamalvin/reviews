@@ -69,7 +69,7 @@ Controller:
  index
  show
  new
- create
+ 
 
 Models:
 
@@ -84,9 +84,8 @@ post '/reviews/reviews, to: 'reviews#create'
 
 
 Views:
-index
-show
 new
+index => nested under products
 
 Routes:
 get '/products/:product_id/reviews', to: 'reviews#index'

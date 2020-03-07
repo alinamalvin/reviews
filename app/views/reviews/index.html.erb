@@ -1,0 +1,9 @@
+<h2> All the reviews of <%= @product.title %> </h2>
+<%= link_to "Add New Review", new_product_review_path(@product) %> 
+<p> <img src=<%=@product.img %>></p>
+
+<% @product.reviews.each.with_index(1) do |review, index| %>
+    <h3> <%= index %> 
+    <h3> <%= review.description  %></h3>
+    by <%=review.user_id  %></h3>
+ <% end %> 
