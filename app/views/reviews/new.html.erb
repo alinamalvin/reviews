@@ -3,7 +3,7 @@
 <%= render partial: '/errors', locals: { record: @review } %>
 
 <%= form_for @review do |f| %>
-   <%=  f.label :Description %>
+   <%=  f.label :description %>
    <%=  f.text_area :description %>
    <%= f.hidden_field :product_id, value: @product.id %>
    <%= f.submit %>
