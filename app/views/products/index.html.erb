@@ -1,6 +1,9 @@
 <h2> Products </h2> 
 
 <%= link_to "Create New Product", new_product_path %>
+<%= link_to "All Products", products_path %>
+<%= link_to "Only Cleansers", products_cleanser_path %>
+<%= link_to "Only Makeup", products_makeup_path %>
 
 <% @products.each do |product| %>
    <p> <%= product.brand %></p>

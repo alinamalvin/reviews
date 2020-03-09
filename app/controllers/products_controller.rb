@@ -20,6 +20,16 @@ class ProductsController < ApplicationController
         end 
     end 
 
+    def cleanser
+        @products= Product.cleanser
+        render :index
+    end 
+
+    def makeup
+        @products= Product.makeup
+        render :index
+    end 
+
 
     private
 
