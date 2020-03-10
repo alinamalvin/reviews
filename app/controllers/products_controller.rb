@@ -8,10 +8,12 @@ class ProductsController < ApplicationController
     end 
 
     def new
+        require_login
         @product=Product.new
     end 
 
     def create
+        require_login
         @product = Product.new(product_params)
         if @product.save
             redirect_to new_product_review_path(@product)

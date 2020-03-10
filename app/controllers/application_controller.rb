@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
         !!current_user
     end 
 
-    def logged_in(user)
+    def log_in(user)
         session[:user_id]=user.id 
     end 
 

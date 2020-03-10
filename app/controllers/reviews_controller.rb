@@ -1,11 +1,11 @@
 class ReviewsController < ApplicationController
 
 def index
-    get_product
-    @reviews= current_user.reviews
+         get_product 
 end 
 
 def new
+    require_login
     get_product
     redirect_to product_path if !@product
     @review=Review.new 
@@ -13,7 +13,7 @@ end
 
 def create
     @product= Product.find_by(id: params[:review][:product_id])
-    @review= Review.new(review_params)
+    @review= current_user.reviews.build(review_params)
     if @review.save
         redirect_to product_reviews_path(@review.product)
     else 
