@@ -92,3 +92,22 @@ get '/products/:product_id/reviews', to: 'reviews#index'
 get '/products/:product_id/reviews/new', to: 'reviews#new'
 post '/reviews', to: 'reviews#create'
 
+Authentication:
+SessionsController to handle login and logout
+UsersController to handle signup (creating user accounts)
+
+Views:
+signup form
+login form
+
+Routes:
+get '/login', to: 'sessions#new'
+post '/login', to: 'sessions#create'
+get '/logout', to: 'sessions#destroy'
+get '/signup', to: 'users#new'
+post '/signup', to: 'users#create'
+
+Relationships:
+user has_many reviews
+user has_many products through reviews
+reviews belongs to user

@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
 def index
     get_product
+    @reviews= current_user.reviews
 end 
 
 def new

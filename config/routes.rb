@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   resources :reviews, only: :create
   get '/products/makeup', to: 'products#makeup'
   get '/products/cleanser', to: 'products#cleanser'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
 end
