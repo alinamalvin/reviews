@@ -1,13 +1,12 @@
 class ReviewsController < ApplicationController
+before_action :get_product 
+before_action :product_nil
 
 def index
-         get_product 
 end 
 
 def new
     require_login
-    get_product
-    redirect_to product_path if !@product
     @review=Review.new 
 end 
 
@@ -22,6 +21,10 @@ def create
 end 
 
 private 
+
+def product_nil
+    redirect_to products_path if !@product
+end 
 
 def get_product
     @product ||= Product.find_by(id: params[:product_id])
