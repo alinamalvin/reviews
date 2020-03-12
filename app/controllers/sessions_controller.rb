@@ -4,6 +4,7 @@ def new
 end 
 
 def create
+    # if the user logged in through github, save their uid in the session hash 
     # authenticate the user - verify  they exist in the db by username
     # and that thir password matches what is in nthe db
     @user= User.find_by(username: params[:username])
