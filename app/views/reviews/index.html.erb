@@ -5,5 +5,5 @@
 <% @product.reviews.each.with_index(1) do |review, index| %>
     <h3> <%= index %> 
     <h3> <%= review.description  %></h3>
-    by <%=review.user_id  %></h3>
+    by <%= review.user.username %></h3>
  <% end %> 

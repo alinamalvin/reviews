@@ -31,6 +31,11 @@ class ProductsController < ApplicationController
         render :index
     end 
 
+    def myreviews
+       @products= Product.myreviews
+       render :index 
+    end 
+
 
     private
 

@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-before_action :get_product 
-before_action :product_nil
+before_action :get_product, except: :create
+#before_action :product_nil 
 
 def index
 end 
@@ -12,11 +12,12 @@ end
 
 def create
     @product= Product.find_by(id: params[:review][:product_id])
-    @review= current_user.reviews.build(review_params)
+    product_nil
+    @review= current_user.reviews.build(review_params) 
     if @review.save
         redirect_to product_reviews_path(@review.product)
     else 
-         render:new
+         render :new
     end 
 end 
 
