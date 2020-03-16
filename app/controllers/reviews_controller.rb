@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
 before_action :get_product, except: :create
-#before_action :product_nil 
 
 def index
 end 

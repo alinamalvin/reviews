@@ -4,11 +4,10 @@ def new
 end 
 
 def create
-    #binding.pry
     # if a user logged in with omniauth (how we can tell?)
     if request.env["omniauth.auth"] 
         # then find or create in the db by uid 
-        @user=User.find_by(github_uid: request.env["omniauth.auth"])
+        @user= User.find_by(github_uid: request.env["omniauth.auth"]["uid"])
         if @user.nil?
             @user=User.create(username: request.env["omniauth.auth"]["info"]["nickname"], github_uid: request.env["omniauth.auth"]["uid"], password: "github")       
         end 
