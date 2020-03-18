@@ -20,6 +20,10 @@ def create
     end 
 end 
 
+def myreviews
+    @myreviews=current_user.reviews
+end 
+
 private 
 
 def product_nil

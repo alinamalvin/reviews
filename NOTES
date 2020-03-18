@@ -111,3 +111,8 @@ Relationships:
 user has_many reviews
 user has_many products through reviews
 reviews belongs to user
+
+
+Tasks:
+1)blog post about has_many associations 
+2) partial for products that is rendered from the myreviews index 

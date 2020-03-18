@@ -1,0 +1,10 @@
+<% info.each.with_index(1) do |review, index| %>
+    <p><h3> <%= review.product.try(:title) %> </h3>
+    <h3> <%= index %> </h3>
+    <h3> <%= review.description  %></h3>
+    by <%= review.user.username %></h3></p>
+ <% end %> 
+
+
+ 
+    
